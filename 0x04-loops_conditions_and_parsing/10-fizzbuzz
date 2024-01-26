@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Bash script that displays numbers from 1 to 100.
 for num in {1..100}
 do
 	if (( num % 3 == 0 && 5 == 0 ))
