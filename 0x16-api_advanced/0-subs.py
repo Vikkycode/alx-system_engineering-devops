@@ -12,9 +12,6 @@ def number_of_subscribers(subreddit):
     
     Args:
         subreddit (str): The name of the subreddit to query.
-
-    Returns:
-        int: The number of subscribers. Returns 0 if the subreddit is invalid or on error.
     """
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
