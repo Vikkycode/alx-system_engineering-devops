@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-"""Function to query subscribers on a given reddit subreedit"""
+"""
+Function to query subscribers on a given reddit subreedit
+"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """ Return the total number of subscribers on a given reddit subreddit"""
+
+    """
+    Return the total number of subscribers in a given Reddit subreddit.
+
+    Args:
+        subreddit (str): The name of the subreddit to query.
+    """
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {
@@ -15,4 +23,4 @@ def number_of_subscribers(subreddit):
     if response.status_code == 404:
         return 0
     results = response.json().get("data")
-    return results.get("subscribers")
+    return results.get("subscribers", 0)
